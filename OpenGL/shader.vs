@@ -15,6 +15,6 @@ void main()
 {
     gl_Position =  projection * view * model * vec4(aPos, 1.0);
     FragPos = vec3(model * vec4(aPos, 1.0));    
-    Normal = mat3(transpose(inverse(model))) * aNormal;  
+    Normal = mat3(transpose(inverse(model))) * aNormal;   // Normal matrix: a 3x3 matrix that is the model (or model-view) matrix without translation , it is used on normal to fix surface normal value due to uneven Scaling on it X and Y axis
     TexCoords = aTexCoords;
 }
