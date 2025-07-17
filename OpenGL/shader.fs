@@ -5,24 +5,7 @@ in vec2 TexCoords;
 
 uniform sampler2D texture1;
 
-// Uncomment the below main method to see non linear depth buffer and comment other main method too 
-//void main()
-//{    
-    //FragColor = texture(texture1, TexCoords);
-//	FragColor = vec4(vec3(gl_FragCoord.z), 1.0);
-//}
-
-float near = 0.1; 
-float far  = 100.0; 
-  
-float LinearizeDepth(float depth) 
-{
-    float z = depth * 2.0 - 1.0; // back to NDC 
-    return (2.0 * near * far) / (far + near - z * (far - near));	
-}
-
 void main()
-{             
-    float depth = LinearizeDepth(gl_FragCoord.z) / far; // divide by far for demonstration
-    FragColor = vec4(vec3(depth), 1.0);
+{    
+    FragColor = texture(texture1, TexCoords);
 }
