@@ -1,6 +1,8 @@
 # Visual Studio cache and build files
 .vs/
-.vscode/
+
+# Ignore only root-level VSCode folder, but keep others
+/.vscode/
 
 # Ignore user-specific files
 *.user

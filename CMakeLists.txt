@@ -81,3 +81,22 @@ else() # Linux
         dl
     )
 endif()
+
+# --- NEW SECTION: Copy VSCode Config Based on Platform ---
+set(VSCODE_ROOT "${CMAKE_SOURCE_DIR}/.vscode")
+
+if(WIN32)
+    set(VSCODE_SOURCE "${CMAKE_SOURCE_DIR}/vscodeConfig/win/.vscode")
+elseif(APPLE)
+    set(VSCODE_SOURCE "${CMAKE_SOURCE_DIR}/vscodeConfig/mac/.vscode")
+else()
+    message(WARNING "Unknown platform, not copying VSCode config.")
+endif()
+
+if(EXISTS "${VSCODE_SOURCE}")
+    file(REMOVE_RECURSE "${VSCODE_ROOT}")  # Remove old .vscode if exists
+    file(COPY "${VSCODE_SOURCE}" DESTINATION "${CMAKE_SOURCE_DIR}")
+    message(STATUS "Copied VSCode config from ${VSCODE_SOURCE} to ${VSCODE_ROOT}")
+else()
+    message(WARNING "VSCode config source not found: ${VSCODE_SOURCE}")
+endif()
