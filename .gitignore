@@ -1,5 +1,13 @@
-#Directories
+# Visual Studio cache and build files
 .vs/
+.vscode/
 
-#Files
+# Ignore user-specific files
 *.user
+
+# Ignore build output directories
+x64/
+build/
+
+# Ignore your OpenGL project folder (if you don't want to track it)
+OpenGL/x64/
