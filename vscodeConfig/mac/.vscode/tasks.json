@@ -4,9 +4,12 @@
         {
             "label": "build OpenGL",
             "type": "shell",
-            "command": "cmake --build build --config Debug",
-            "group": "build",
-            "problemMatcher": "$msCompile"
+            "command": "cmake --build build", // ✅ no --config Debug needed for single-config generators
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
         }
     ]
 }

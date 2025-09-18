@@ -2,16 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug OpenGL",
-            "type": "cppvsdbg",              
+            "name": "Debug OpenGL (macOS)",
+            "type": "cppdbg",              
             "request": "launch",
-            "program": "${workspaceFolder}/build/Debug/OpenGL.exe", 
+            "program": "${workspaceFolder}/build/OpenGL", // ✅ auto-picks correct executable
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/OpenGL",     
+            "cwd": "${workspaceFolder}/OpenGL",   // ✅ root directory (so shaders/resources load correctly)
             "environment": [],
             "console": "integratedTerminal",
-            "preLaunchTask": "build OpenGL"  
+            "MIMode": "lldb",              // ✅ lldb is default macOS debugger
+            "preLaunchTask": "build OpenGL"
         }
     ]
 }
