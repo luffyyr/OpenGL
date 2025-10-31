@@ -43,16 +43,10 @@
     <None Include="shader.vs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="light.fs">
+    <None Include="skybox.vs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="light.vs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="framebuffers_screen.vs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="framebuffers_screen.fs">
+    <None Include="skybox.fs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
