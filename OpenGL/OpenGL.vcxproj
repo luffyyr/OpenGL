@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs" />
+    <None Include="shader.gs" />
     <None Include="shader.vs" />
     <None Include="skybox.fs" />
     <None Include="skybox.vs" />

@@ -49,5 +49,8 @@
     <None Include="skybox.fs">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="shader.gs">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
