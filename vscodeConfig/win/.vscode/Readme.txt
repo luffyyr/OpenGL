@@ -1,1 +1,0 @@
-config files for vscode WIN system. 
