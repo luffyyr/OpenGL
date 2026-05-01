@@ -43,13 +43,13 @@
     <None Include="shader.vs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="skybox.vs">
+    <None Include="gizmos.vs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="skybox.fs">
+    <None Include="gizmos.fs">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="shader.gs">
+    <None Include="gizmos.gs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

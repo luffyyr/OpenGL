@@ -152,10 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.fs" />
-    <None Include="shader.gs" />
+    <None Include="gizmos.gs" />
     <None Include="shader.vs" />
-    <None Include="skybox.fs" />
-    <None Include="skybox.vs" />
+    <None Include="gizmos.fs" />
+    <None Include="gizmos.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

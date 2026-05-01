@@ -86,12 +86,13 @@ int main()
 
     // build and compile shaders
        // -------------------------
-    Shader shader("shader.vs", "shader.fs", "shader.gs");
+    Shader shader("shader.vs", "shader.fs");
+    Shader normalShader("gizmos.vs", "gizmos.fs", "gizmos.gs");
 
     // load models
     // -----------
     stbi_set_flip_vertically_on_load(true);
-    Model nanosuit("Resources/Model/backpack/backpack.obj");
+    Model bagpack("Resources/Model/backpack/backpack.obj");
 
     // render loop
     // -----------
@@ -113,7 +114,7 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // configure transformation matrices
-        glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 1.0f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 1.0f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();;
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, -6.0f)); // translate it down so it's at the center of the scene
@@ -128,7 +129,15 @@ int main()
         shader.setFloat("time", static_cast<float>(glfwGetTime()));
 
         // draw model
-        nanosuit.Draw(shader);
+        bagpack.Draw(shader);
+
+        // then draw model with normal visualizing geometry shader
+        normalShader.use();
+        normalShader.setMat4("projection", projection);
+        normalShader.setMat4("view", view);
+        normalShader.setMat4("model", model);
+
+        bagpack.Draw(normalShader);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
